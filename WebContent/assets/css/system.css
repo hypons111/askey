@@ -1,0 +1,62 @@
+#systemContainer {
+	width: 760px;
+	height: fit-content;
+	display: flex;
+	justify-content: center;
+}
+.systemBadge {
+	display: flex;
+	justify-content: space-between;
+	width: 305px;
+	height: 210px;
+	padding: 2em 2em 0 1em;
+	background-color: white;
+	border-bottom: 25px solid var(--AskeyRed);
+	border-radius: 10px;
+}
+#account {
+	margin-right: 9.5em;
+}
+
+.systemBadge p {
+	letter-spacing: -2px;
+}
+.systemBadge img {
+	width: 130px;
+	height: 130px;
+}
+
+
+/* 細 直 */
+@media(max-width: 500px) {
+	#account {
+    margin-right: 0;
+	}
+	#loginBadgeLogoWrapper img {
+		width: 10em;
+	}
+	#systemContainer {
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+	}
+	.systemBadge:first-child {
+		margin-bottom: 2.5em;
+	} 
+}
+
+/* 細 橫 */
+@media(max-height: 600px) {
+	#loginBadgeLogoWrapper img {
+		width: 10em;
+	}
+	#systemContainer {
+		width: 95vw;
+		height: fit-content;
+		display: flex;
+		justify-content: center;
+	}
+	.systemBadge {
+		margin: 1em;
+	}
+}

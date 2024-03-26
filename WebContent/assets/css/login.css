@@ -1,0 +1,156 @@
+.LC_lightGray {
+	margin-top: 0;
+}
+
+#loginContainer,
+#passwordContainer,
+#accountContainer {
+	width: 60%;
+	height: fit-content;
+	padding: 0 10%;
+	background-color: white;
+	border-radius: 6px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+#header {
+	height: 10%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin: 2em 0 1em 0;
+}
+#header > .block,
+#header > i {
+	width: 25px;
+	height: 25px;
+	line-height: 2em;
+}
+#header > p {
+	font-size: var(--XLarge);
+	font-weight: var(--XBold);
+	font-weight: var(--XBoldNo);
+}
+#body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch;
+}
+.row {
+	margin: 1vh 0;
+}
+.row .input-group {
+	padding: 0;
+}
+#checkcode {
+	height: 38px;
+	margin-left: auto;
+}
+.footer {
+	height: 16%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 1em 0 2em 0;
+}
+.footer  u#forgetPasswordLink  {
+	text-align: center;
+	margin-top: 1em;
+}
+
+#bottomImage {
+	position: absolute;
+	bottom: 0px;
+	width: 100vw;
+	background-color: var(--Gray900);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1vh 0;
+	z-index: 600;
+}
+#bottomImage img {
+	width: 7.5vw;
+}
+#bottomImage p {
+	font-size: var(--XSmall);
+	color: white;
+	margin-top: 5px;
+	margin-bottom: 0;
+}
+
+/* 大 */
+@media(min-width: 1200px) {}
+
+/* 中 */
+@media(max-width: 1199px) {
+	#loginContainer,
+	#passwordContainer,
+	#accountContainer {
+		width: 75%;
+	}
+}
+
+/* 細 直 */
+@media(max-width: 500px) {
+	#loginBadgeLogoWrapper img {
+		width: 10em;
+	}
+	#bottomImage img {
+		width: 30vw;
+	}
+	#header > .block,
+	#header > img {
+		width: 20px;
+		height: 20px;
+		margin-top: 8px;
+	}
+	#loginContainer,
+	#passwordContainer,
+	#accountContainer {
+		width: 100%;
+		height: 80%;
+		padding: 0 5vh;
+		overflow-y: auto;
+	}
+}
+
+/* 細 橫 */
+@media(max-height: 600px) {
+	#loginBadgeLogoWrapper img {
+		width: 10em;
+	}
+	#bottomImage img {
+		width: 15vw;
+	}
+	#header > .block,
+	#header > img {
+		width: 20px;
+		height: 20px;
+	}
+	#loginContainer,
+	#passwordContainer,
+	#accountContainer {
+		width: 80%;
+		height: 80%;
+		padding: 0 5vh;
+	}
+	#loginContainer > #header,
+	#passwordContainer > #header,
+	#accountContainer > #header,
+	#loginContainer > .footer,
+	#passwordContainer > .footer,
+	#accountContainer > .footer {
+		height: 20%;
+	}
+	#loginContainer > #form,
+	#passwordContainer > #body,
+	#accountContainer > #body {
+		display: inline-block;
+		overflow-y: scroll;
+	}
+}

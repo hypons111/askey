@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.0.xsd 
+http://www.springframework.org/schema/mvc 
+http://www.springframework.org/schema/mvc/spring-mvc.xsd
+http://www.springframework.org/schema/aop 
+http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+	<mvc:resources mapping="/fonts/**" location="/fonts/" />
+	<mvc:resources mapping="/js/**" location="/js/" />
+	<mvc:resources mapping="/images/**" location="/images/" />
+	<mvc:resources mapping="/css/**" location="/css/" />
+
+	<context:component-scan base-package="com.topctek.*.controller" />
+	<context:component-scan base-package="com.topctek.*.service" />
+	<context:component-scan base-package="com.topctek.*.core.service" />
+	<context:component-scan base-package="com.topctek.*.batch.service" />
+	<!-- AOP稽核使用 -->
+	<!-- <context:component-scan base-package="com.topctek.global.aspectj" /> -->
+	<!-- <context:component-scan base-package="com.topctek.global.aspectj.service" /> -->
+
+ 	<aop:aspectj-autoproxy ></aop:aspectj-autoproxy>  
+	<mvc:annotation-driven/>
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+<!-- 	    <property name="prefix" value="/WEB-INF/view/" /> -->
+	    <property name="prefix" value="/view/" />
+	    <property name="suffix" value=".jsp" />
+	</bean>
+
+	<bean id="SqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:mybatis-config.xml" />
+	</bean>
+
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate"
+		scope="prototype">
+		<constructor-arg index="0" ref="SqlSessionFactory" />
+	</bean>
+
+	<bean id="ApEnv" class="com.topctek.global.util.ApEnv"> <!-- 登入系統報表、email、Jasper檔案路徑、報表上傳、存放路徑 -->
+		<property name="configLocation" value="/home/centos/SystemConfig/ASKEY/ApEnv.properties"></property>
+	</bean>
+	
+	<!-- SpringMVC上傳檔案時，需要配置MultipartResolver處理器 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	<property name="defaultEncoding" value="UTF-8" />
+	<!-- 指定所上傳檔案的總大小不能超過200KB。注意maxUploadSize屬性的限制不是針對單個檔案，而是所有檔案的容量之和 -->
+	<!-- <property name="maxUploadSize" value="200000"/> -->
+	<!-- 指定上傳檔案的臨時路徑 -->
+	<!-- <property name="uploadTempDir" value="uploadTempDirectory" /> -->
+	</bean> 
+	
+<!-- 以下排列順序不可變動否則DB無法連線 -->
+	<!-- 設定datasource -->
+  	<bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
+		<property name="driverClass" value="${jdbc.driver}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.user}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="idleConnectionTestPeriod" value="60"/>
+		<property name="idleMaxAge" value="240"/>
+		<property name="maxConnectionsPerPartition" value="30"/>
+		<property name="minConnectionsPerPartition" value="10"/>
+		<property name="partitionCount" value="3"/>
+		<property name="acquireIncrement" value="5"/>
+		<property name="statementsCacheSize" value="100"/>
+		<property name="releaseHelperThreads" value="3"/>
+	</bean>
+	<!-- 解密properties檔 -->
+	<bean class="com.topctek.global.util.EncryptPropertyPlaceholderConfigurer" p:locations="file:/home/centos/SystemConfig/ASKEY/springConfiguration/jdbc.properties"></bean>
+	<!-- 讀取properties檔 -->
+  	<context:property-placeholder location="file:/home/centos/SystemConfig/ASKEY/springConfiguration/jdbc.properties" ignore-unresolvable="true" file-encoding="UTF-8" /> 
+<!-- 以上排列順序不可變動否則DB無法連線 -->
+<!-- 	<import resource="file:/home/centos/SystemConfig/ASKEY/springConfiguration/batchConfig.xml" /> -->
+</beans>

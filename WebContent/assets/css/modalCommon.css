@@ -1,0 +1,428 @@
+.modal-dialog {
+	max-width: 50%;
+/* 	border: 5px solid lime; */
+}
+.modal .modal-header {
+	border-bottom-width: 0;
+}
+#modalTitle {
+	padding: 0;
+	margin: 0;
+}
+
+.modal-body {
+	padding: 1em 2em;
+}
+.modal .formRow {
+	margin-bottom: 1em;
+}
+.modal .item {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+.modal .modal-body div.formRow:last-child,
+.modal .form-group div.formRow:last-child {
+	margin-bottom: 0;
+}
+.modal .lable {
+	width: 10em;
+	display: flex;
+}
+.modal .modal-body .item input:not([type="radio"]),
+.modal .modal-body .item select,
+.modal .modal-body .item button,
+.modal .modal-body .item textarea,
+.modal .modal-body .item .btn-group,
+.modal .modal-body .item .input-group {
+	width: calc(100% - 10em);
+}
+.modal select {
+	text-align: start;
+	border: var(--bs-border-width) solid var(--bs-border-color);
+}
+.modal .inputNotice {
+	text-align: end;
+}
+.modal .dropDownButton {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: start;
+	padding-right: 1em;
+	border: var(--bs-border-width) solid var(--bs-border-color);
+}
+.modal-footer {
+	border-top-width: 0;
+}
+
+
+/* ---------------------------------------------------------------- */
+	.is-invalid {
+		border-color: var(--bs-form-invalid-border-color) !important;
+	}
+	select.is-invalid {
+		background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) !important;
+	}
+	.errorMessage {
+		margin-left: 9em;
+	}
+	p {
+		margin-bottom: 0;
+	}
+	.modal .btn-group .form-check {
+		margin-right: 1em;
+	}
+/* ---------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+/* ---------------------------------------------------------------- */
+
+
+
+
+/* 新增品項(共用) */
+.quotationItemModal {
+	--bs-modal-width: 50%;
+}
+.quotationItemModal .modal-body {
+/* 	display: flex; */
+/* 	flex-direction: column; */
+/* 	padding: 1.5em 2em; */
+}
+.quotationItemModal .row {
+	display: flex;
+	flex-direction: column;
+/* 	margin: 0 0 1em 0; */
+	margin: 0;
+	--bs-gutter-x: 0;
+	--bs-gutter-y: 0;
+}
+.quotationItemModal .row > .item {
+	width: 100%;
+	display: flex;
+	margin: 0;
+	justify-content: flex-start;
+	align-items: center;
+}
+#sideMiddle .itemCategory .part {
+	display: flex;
+	width: 100%;
+}
+
+.quotationItemModal .row > .item > input,
+.quotationItemModal .row > .item > select {
+	width: 80%;
+	margin-right: 0.5em;
+	border: var(--bs-border-width) solid var(--bs-border-color);
+}
+.quotationItemModal .row > .item > P:last-child {
+	width: fit-content;
+}
+.tabWrapper {
+	display: flex;
+	justify-content: flex-start;
+}
+.tab {
+	padding: 0.5em 1.75em;
+	background-color: var(--Gray300);
+	border-radius: 0.5em 0.5em 0 0;
+	margin-right: 0.25em;
+}
+.on {
+	color: white;
+	background-color: var(--AskeyRed);
+}
+.tableWrapper {
+	flex-grow: 1;
+	background-color: var(--Gray100);
+	padding: 1em;
+}
+.normalTable {
+	display: flex;
+	flex-direction: column;
+}
+.normalTableRow,
+.relativeTableRow {
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+#normalTableBody .normalTableRow,
+#relativeTableBody .relativeTableRow {
+	min-height: 3em;
+	border-top: 1px solid var(--Gray300);
+}
+.normalTableRow > span,
+.relativeTableRow > span {
+	height: 2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+/* 	border: 1px solid red; */
+}
+.normalTableRow .attrOption i,
+.relativeTableRow .attrOption i {
+	margin: 0.5em;
+}
+.commonItemMenu .dropdown-menu {
+	max-height: 20em;
+	overflow-y: auto;
+}
+.commonItemMenu .dropdown-toggle p {
+	max-width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+/* 新增品項(共用) */
+
+
+/* Sales 品項類型 modal */
+#salesQuotationItemModal {
+	--bs-modal-margin: calc(0vh + 98px);
+}
+#salesQuotationItemModal #modalTitleGroup {
+	display: flex;
+	justify-content: space-between;
+}
+#salesQuotationItemModal .customerName {
+	padding-bottom: 8px;
+	margin-bottom: 24px;
+}
+#salesmanNormalTable {
+	background-color: var(--Gray100);
+ 	padding: 1em;
+}
+#salesQuotationItemModal #form {
+	min-height: 150px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-bottom: 2em;
+}
+#salesQuotationItemModal .row > .item p:nth-child(2) {
+	width: 4.5em;
+}
+.quotationItemModal .normalTable .item {
+	flex-wrap: wrap;
+}
+.quotationItemModal .normalTable .itemPart1 {
+	display: flex;
+	width: 11%;
+}
+.quotationItemModal .normalTable .itemPart2 {
+	width: 89%;
+}
+.quotationItemModal .normalTable .itemPart2 {
+	width: 89%;
+}
+.quotationItemModal .normalTable .row:nth-child(3) {
+/* 	margin-top: 24px; */
+}
+#salesQuotationItemModal #relativeTableBody {
+	max-height: 608px;
+	overflow: auto;
+}
+#salesQuotationItemModal .relativeTableRow .btn-group {
+	width: 100%;
+}
+#salesQuotationItemModal .relativeTableRow .dropdown-toggle {
+	display: flex;
+	justify-content: space-between;
+}
+#salesQuotationItemModal .relativeTableRow input.hideDecoration {
+	--bs-form-select-bg-img: auto !important;
+}
+#salesQuotationItemModal .relativeTableRow span.is-invalid > div > div > button {
+	border-color: var(--bs-form-invalid-border-color);
+	padding-right: 4.125rem;
+	background-position: right 0.75rem center,center right 2.25rem;
+	background-size: 16px 12px,calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+	--bs-form-select-bg-icon: auto;
+}
+#salesQuotationItemModal .relativeTableRow > span {
+	width: 10%;
+}
+#salesQuotationItemModal .relativeTableRow > span:nth-child(2),
+#salesQuotationItemModal .relativeTableRow> span:nth-child(3) {
+	width: 40%;
+	padding: 0 0.5em;
+}
+#salesQuotationItemModal .relativeTableRow > span:nth-child(2) .form-floating,
+#salesQuotationItemModal .relativeTableRow > span:nth-child(3) .form-floating {
+	width: 100%;
+}
+#salesQuotationItemModal select {
+	border: 1px solid var(--bs-border-color);
+}
+#salesQuotationItemModal .normalTableRow > span {
+	width: 25%;
+}
+/* Sales 品項類型 modal */
+
+
+
+/* Admin 新增品項 */
+#adminQuotationItemModal .modal-body {
+/* 	height: 85vh; */
+	overflow: auto;
+}
+#adminQuotationItemModal #form {
+	min-height: 150px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+#adminQuotationItemModal .row > .item p:nth-child(2) {
+	width: 4.5em;
+}
+#adminQuotationItemModal .itemAttribute {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	flex-grow: 1;
+	margin-top: 1em;
+}
+#adminQuotationItemModal #normalTableHeader,
+#adminQuotationItemModal #relativeTableHeader  {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid var(--Gray300);
+}
+#adminQuotationItemModal #lumpSumWrapper {
+	margin-top: auto;
+	margin-bottom: 0;
+}
+#adminQuotationItemModal #lumpSumWrapper > #modalTitle {
+	margin: 0;
+}
+#adminQuotationItemModal #lumpSumBody {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+#adminQuotationItemModal #lumpSumBody > i {
+	margin: 1em;
+}
+#adminQuotationItemModal #lumpSumBody > span {
+	margin-right: 1em;
+}
+#adminQuotationItemModal #lumpSumBody > p {
+	margin-left: 1em;
+}
+#adminQuotationItemModal #lumpSumWrapper .form-floating {
+	min-width: 20%;
+	width: fit-content;
+}
+#adminQuotationItemModal .normalTable {
+	height: 100%;
+}
+#adminQuotationItemModal #normalTableBody,
+#adminQuotationItemModal #relativeTableBody {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+#adminQuotationItemModal #normalTableBody {
+	height: fit-content;
+/* 	max-height: 336px; */
+/* 	overflow: auto; */
+	margin-bottom: 0.5em;
+}
+#adminQuotationItemModal #normalTableBody > select,
+#adminQuotationItemModal #normalTableBody > input {
+	min-height: 36px !important;
+	height: 36px !important;
+	padding: 6px 38px 6px 12px !important;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	border: 1px solid red;
+}
+.modal .btn-group > button {
+	padding: 6px 12px;
+	justify-content: flex-start;
+	padding-left: 12px;
+	border: var(--bs-border-width) solid var(--bs-border-color);
+}
+#adminQuotationItemModal .normalTableRow .form-floating {
+	width: 60%;
+}
+
+#adminQuotationItemModal .normalTableRow > span:nth-child(1){
+	width: 10%;
+}
+#adminQuotationItemModal .normalTableRow > span:nth-child(2) {
+	width: 35%;
+}
+#adminQuotationItemModal .normalTableRow > span:nth-child(3) {
+	width: 10%;
+}
+#adminQuotationItemModal .normalTableRow > span:nth-child(4) {
+	width: 25%;
+}
+#adminQuotationItemModal .normalTableRow > span:nth-child(5) {
+	width: 10%;
+}
+#adminQuotationItemModal .normalTableRow > span:nth-child(6) {
+	width: 10%;
+}
+
+#adminQuotationItemModal .relativeTableRow > span:nth-child(1) {
+	width: 10%;
+}
+#adminQuotationItemModal .relativeTableRow > span:nth-child(2) {
+	width: 75%;
+}
+#adminQuotationItemModal .relativeTableRow > span:nth-child(3) {
+	width: 15%;
+}
+.relativeTableRow > span:nth-child(2) .form-floating{
+	width: 100%;
+}
+.attrName  {
+	width: 85%;
+	height: 34px;
+	padding: 6px 12px;
+	border: var(--bs-border-width) solid var(--bs-border-color);
+	border-radius: var(--bs-border-radius);
+}
+
+
+.attrOption i:first-child {
+ display: none
+}
+
+#normalTableBody .normalTableRow:last-child .attrOption i,
+#relativeTableBody .relativeTableRow:last-child .attrOption i,
+#itemTableBody .itemTableRow:last-child .attrOption i {
+	display: inline;
+}
+
+#mainBottom .form-floating > .form-select,
+.normalTableRow .form-floating > .form-select,
+.relativeTableRow .form-floating > .form-select,
+#lumpSumBody select {
+	height: auto !important;
+	min-height: 28px !important;
+	padding: 6px 38px 6px 12px !important;
+}
+	
+#lumpSumBody .form-floating {
+	flex-grow: 1;
+}
+
+/* Admin 新增品項 */
+
+
+
+
+
+

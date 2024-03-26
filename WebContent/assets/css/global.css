@@ -1,0 +1,366 @@
+/*---RESET---*/ 
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, button {    
+    margin: 0;    
+    padding: 0;    
+    border: 0;    
+    outline: 0;    
+    font-weight: inherit;    
+    font-style: inherit;    
+    font-size: 100%;    
+    font-family: "Noto Sans CJK", "Noto Sans CJK TC","Microsoft JhengHei", STHeiti, sans-serif;;
+		line-height: 1.5em;
+    vertical-align: baseline;
+		box-sizing: border-box;
+}
+:root {
+/* Color */
+	--AskeyRed: #E61F12;
+	
+	--LightGray: #f8f9fa;
+	--Gray: #adb5bd;
+	--DarkGray: #212529;	
+	
+	
+	--Gray100: #f8f9fa;
+	--Gray200: #e9ecef;
+	--Gray300: #dee2e6;
+	--Gray400: #ced4da;
+	--Gray500: #adb5bd;
+	--Gray600: #6c757d;
+	--Gray700: #495057;
+	--Gray800: #343a40;
+	--Gray900: #212529;	
+	
+	
+/* Font Weight */
+	--Light: light;
+	--LightNo: 100;
+	--Bold: bold;
+	--BoldNo: 700;
+	--XBold: Black;
+	--XBoldNo: 900;	
+/* Font Size */
+	--XSmall: 0.6em;
+	--Small: 0.8em;
+	--Medium: 1em;
+	--Large: 1.2em;
+	--XLarge: 1.4em;
+	--XXLarge: 1.6em;
+	--FALarge: 2em;
+}
+
+/* Color */
+.BGC_askeyRed { background-color: var(--AskeyRed) !important; }
+.BGC_lightGray { background-color: var(--LightGray); }
+
+.BGC_gray { background-color: lime; }
+.BGC_darkGray { background-color: cyan; }
+
+
+
+/* Font Color */
+.FC_white { color: white; }
+.FC_askeyRed { color: var(--AskeyRed); }
+.FC_lighgtGray { color: var(--Gray200); }
+.FC_gray { color: var(--Gray500); }
+.FC_darkGray { color: var(--Gray900); }
+.FC_black { color: black; }
+
+
+
+/* Font Weight */
+.FW_l { 
+	font-weight: var(--Light);
+	font-weight: var(--LightNo);
+}
+.FW_b { 
+	font-weight: var(--Bold);
+	font-weight: var(--BoldNo:);
+}
+.FW_xb { 
+	font-weight: var(--XBold);
+	font-weight: var(--XBoldNo);
+}
+
+/* Font Size */
+.FS_xs {
+	font-size: var(--XSmall);
+}
+.FS_s {
+	font-size: var(--Small);
+}
+.FS_m {
+	font-size: var(--Medium);
+}
+.FS_l {
+	font-size: var(--Large);
+}
+.FS_xl {
+	font-size: var(--XLarge);
+}
+.FS_xxl {
+	font-size: var(--XXLarge);
+}
+.FS_fatAss {
+	font-size: var(--FALarge);
+}
+
+
+/* z-index */
+#topImage {
+	z-index: 1 !important;
+}
+#badgeContainer {
+	z-index: 1000;
+}
+#mainContainer > .subContainer {
+	z-index: 500;
+}
+/* .dropdown *, */ .modal {
+	z-index: var(--bs-modal-zindex) !important;
+}
+/* z-index */
+
+
+
+
+/* margin */
+.mr05em {
+	margin-right: 0.5em;
+}
+.mr1em {
+	margin-right: 1em;
+}
+/* margin */
+
+
+
+/* 其他 */
+.noM {
+	margin: 0 !important;
+}
+.noP {
+	padding: 0 !important;
+}
+
+.none {
+	display: none !important;
+}
+.pointer {
+	cursor: pointer;	
+}
+.LC_lightGray {
+	width: 100%;
+	height: 0 !important;
+/* 	margin: 1vh 0; */
+	border-bottom: 1px solid var(--Gray);
+}
+.errorMessage {
+	color: var(--AskeyRed);
+}
+.awesome {
+	font-family: FontAwesome;
+	font-style: normal;
+}
+.star {
+	width: 1em;
+	margin-right: 0 !important;
+	color: var(--AskeyRed);
+}
+.starBlock {
+	width: 1em;
+	margin-right: 0 !important;
+	color: rgb(256, 256, 256, 0);
+}
+.blue {
+	color: #0d6efd;
+}
+.dim {
+	color: #636c72 !important;
+}
+.redButton {
+	color: white !important;
+	background-color: var(--AskeyRed) !important;
+}
+.leftBtn {
+	margin: 0 0 0 0 !important;
+}
+.hideDecoration {
+	-webkit-appearance: none !important;
+	-moz-appearance: textfield !important;
+	margin: 0 !important;
+}
+
+
+
+/* FLEX */
+.flex {
+	display: flex;
+}
+.FRH_between {
+	justify-content: space-between;
+}
+.FRH_around {
+	justify-content: space-around;
+}
+.FRH_Center {
+	justify-content: center;
+}
+.FRH_Left {
+	justify-content: left;
+}
+.FRH_Right {
+	justify-content: right;
+}
+.FRV_Top {
+	align-items: flex-start !important;
+}
+.FRV_Center {
+	align-items: center;
+}
+/* FLEX */
+
+
+#topImage {
+	position: absolute;
+}
+#topImage img {
+	width: 100%;
+}
+
+
+#badgeContainer {
+	width: 100%;
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	padding: 2em 2em 0 2em;
+}
+#normalBadge {
+	height: 32px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+#badgeLogo {
+	width: 15em;
+	height: 100%;
+/* 	border: 1px solid red !important; */
+}
+#normalBadgeLogo {
+	width: 3em;
+	margin: 0 10px;
+}
+#normalBadge i,
+#normalBadge p {
+	margin: 0;
+	font-size: var(--XLarge);
+	font-weight: var(--XBold);
+	font-weight: var(--XBoldNo);
+}
+#normalBadge p {
+	margin-left: 0.5em;
+}
+
+.modalBigIcon {
+	width: fit-content;
+	background-color: #f8f9fa;
+	display: flex;
+	align-items: center;
+	border-radius: var(--bs-border-radius) 0 0 var(--bs-border-radius);
+	padding: 0px 1px 0 11px;
+}
+#modalBig > button::before {
+	vertical-align: middle;
+	display: inline-block;
+	width: 1em;
+	margin-right: 0.5em;
+}
+#modalBig > button::after,
+#modalSmall > button::after {
+	content: none;
+}
+#modalBig .dropdown-menu,
+#modalSmall .dropdown-menu {
+	min-width: fit-content;
+}
+
+#modalSmall {
+	display: none;
+}
+.modal-header > p {
+	margin-bottom: 0;
+}
+
+
+#mainContainer {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: auto;
+	background-color: var(--bs-gray-200);
+}
+
+#modalTitle {
+/* 	width: 30%; */
+	color: var(--AskeyRed);
+	font-weight: var(--XBold);
+	font-weight: var(--XBoldNo);
+	padding-bottom: 8px;
+	border-bottom: 2px solid red;
+	margin-bottom: 1em;
+}
+
+/* 大 */
+@media(min-width: 1200px) {}
+
+/* 中 */
+@media(max-width: 1199px) {}
+
+/* 細 直 */
+@media(max-width: 500px) {
+	#badgeLogo {
+		width: 10em;
+		height: 100%;
+	}
+	#badgeContainer {
+		align-items: center;
+		padding: 1em 1em 0 1em;
+	}
+	#normalBadge {
+		height: fit-content;
+	}
+	#modalBig {
+		display: none;
+	}
+	#modalSmall {
+		display: inline-block;
+	}
+	#bottomImage p {
+		font-size: 7px;
+		color: white;
+	}
+}
+
+/* 細 橫 */
+@media(max-height: 600px) {
+	#modalBig {
+		display: none;
+		top: 15px;
+    right: 15px;
+	}
+	#modalBig * {
+		font-size: var(--XSmall);
+	}
+	#modalBig > button::before {
+    vertical-align: top;
+	}
+	#modalSmall {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		display: inline-block;
+	}
+}
